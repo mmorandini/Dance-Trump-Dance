@@ -1,9 +1,9 @@
 body {
-  background-color: darkgrey;
+  background-color: lime;
   margin: 0;
 }
 header{
-  background-color: lime;
+  background-color: black;
   padding: 10px;
   text-align: center;
   margin: 0 auto;
