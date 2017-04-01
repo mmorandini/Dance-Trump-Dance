@@ -1,3 +1,42 @@
 body {
-  background-color: lime;
+  background-color: darkgrey;
+  margin: 0;
 }
+header{
+  background-color: lime;
+  padding: 10px;
+  text-align: center;
+  margin: 0 auto;
+}
+header > h2 {
+  font-family: 'Monofett', cursive;
+  color: salmon;
+  font-size: 65px;
+  padding: 0;
+  margin: 5px;
+  font-weight: 100;
+}
+h1 {
+  font-family: 'Bungee Shade', cursive;
+  font-size: 60px;
+  text-align: center;
+  margin: 0 auto;
+  color: darkgrey;
+}
+main {
+  height: 400px;
+  text-align: center;
+  margin: 0 auto;
+}
+
+footer {
+  text-align: center;
+  height: 50px;
+  margin: 0 auto;
+}
+.game-footer{
+  height: 200px;
+}
+ #arrow {
+   height: 160px;
+ }
