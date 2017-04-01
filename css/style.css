@@ -7,6 +7,7 @@ header{
   padding: 10px;
   text-align: center;
   margin: 0 auto;
+  padding: 40px 0 20px;
 }
 header > h2 {
   font-family: 'Monofett', cursive;
@@ -18,7 +19,7 @@ header > h2 {
 }
 h1 {
   font-family: 'Bungee Shade', cursive;
-  font-size: 60px;
+  font-size: 80px;
   text-align: center;
   margin: 0 auto;
   color: darkgrey;
@@ -26,9 +27,17 @@ h1 {
 main {
   height: 400px;
   text-align: center;
+  padding: 15px;
   margin: 0 auto;
 }
-
+.scoreCounter{
+  font-family: 'Press Start 2P', cursive;
+  text-align: right;
+  font-size: 20px;
+}
+#score{
+  font-size: 35px;
+}
 footer {
   text-align: center;
   height: 50px;
@@ -36,7 +45,11 @@ footer {
 }
 .game-footer{
   height: 200px;
+  margin: 50px;
 }
  #arrow {
-   height: 160px;
+   height: 100px;
+   background-color: lime;
+   border-radius: 90px;
+   opacity: 0.5;
  }
