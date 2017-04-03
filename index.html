@@ -20,22 +20,30 @@
 </head>
 <body>
   <header>
-    <h1>DANCE, DANCE, DANCE!</h1>
+    <h1>DANCE, TRUMP, DANCE!</h1>
     <h2>Test your dancing skills!</h2>
   </header>
 
   <section>
-    <main>
-      <div class="scoreCounter" id="">
-        CURRENT POINTS:<span id="score"> 0</span>
-      </div>
-      <div class="dncefloor">
-        <img class="dancer" src="images/char/char1.png" alt="">
-      </div>
-    </main>
-    <footer class="game-footer">
-      <img class="arrows" id="arrow" src=" ">
-    </footer>
+    <div class="first">
+      <p class="instructions">Use &#8592 &#8593 &#8594 &#8595 to make your character dance. Each match will make you earn 100pts, every miss will take 100pts of your final score.  </p>
+      <button class="start-button" id="start-btn" >START!</button>
+    </div>
+
+    <div id="game-wrapper">
+      <main>
+        <div class="scoreCounter" id="">
+          CURRENT POINTS:<span id="score"> 0</span>
+        </div>
+        <div class="dancefloor">
+          <img class="dancer" src="images/char/TumpsDance1.png" alt="">
+        </div>
+
+      </main>
+      <footer class="game-footer">
+        <img class="arrows" id="arrow" src=" ">
+      </footer>
+    </div>
   </section>
 
 
