@@ -1,19 +1,19 @@
 body {
-  background-color: lime;
+  background-color: dodgerblue;
   margin: 0;
   text-align: center;
 }
 header{
-  background-color: black;
+  background-color: white;
   text-align: center;
   margin: 0 auto;
   padding: 100px 0 20px;
-  height: 250px;
+  max-height: 250px;
 
 }
 header > h2 {
   font-family: 'Monofett', cursive;
-  color: salmon;
+  color: tomato;
   font-size: 65px;
   padding: 0;
   margin: 5px;
@@ -24,7 +24,7 @@ h1 {
   font-size: 90px;
   text-align: center;
   margin: 0 auto;
-  color: darkgrey;
+  color: tomato;
 }
 main {
   height: 400px;
@@ -40,14 +40,15 @@ main {
   font-size: 40px;
   border-radius: 20px;
   /*opacity: 0.7;*/
-  color: lime;
-  background-color: black;
+  color: white;
+  background-color: tomato;
 }
 .instructions {
   font-family: 'Monofett', cursive;
   font-size: 40px;
   width: 60%;
   margin: 30px auto;
+  color: white;
   }
 #game-wrapper{
   display: none;
@@ -57,8 +58,8 @@ main {
   text-align: right;
   font-size: 20px;
 }
-.dancer{
-  height: 500px;
+.dancer {
+  height: 400px;
 }
 #score{
   font-size: 35px;

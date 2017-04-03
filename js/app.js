@@ -2,6 +2,14 @@ $(() => {
 
   var Game = Game || {};
 
+  let userMove = 0;
+  let expectedMove = 0;
+  let moveUp;
+  let moveDown;
+  let moveRight;
+  let moveLeft;
+  let scoreCounter = 0;
+
   $('#start-btn').on('click', function(){
     console.log('clicked');
     $(this).css('display','none');
@@ -13,16 +21,6 @@ $(() => {
     });
     $('#game-wrapper').css({ display: 'block'});
 
-
-    let userMove = 0;
-    let expectedMove = 0;
-    let moveUp;
-    let moveDown;
-    let moveRight;
-    let moveLeft;
-    let scoreCounter = 0;
-
-
     function movesTimer(){
       window.setInterval(nextMove, 1000);
     }
@@ -32,14 +30,18 @@ $(() => {
         scoreCounter+=100;
         console.log(scoreCounter);
         $('#score').html(scoreCounter);
-        $('#arrow').animate({opacity: '1'}, '100');
-        $('#arrow').animate({opacity: '0.5'}, '100');
+        $('#arrow').clearQueue();
+        $('#arrow').animate({opacity: '1'}, '20');
+        $('#arrow').animate({opacity: '0.5'}, '20');
+
       }else{
         scoreCounter-=100;
         console.log(scoreCounter);
         $('#score').html(scoreCounter);
-        $('#arrow').animate({opacity: '1', backgroundColor: 'red'}, '100');
-        $('#arrow').animate({opacity: '0.5', backgroundColor: 'lime'}, '100');
+        $('#arrow').clearQueue();
+        $('#arrow').animate({opacity: '1', backgroundColor: 'red'}, '20');
+        $('#arrow').animate({opacity: '0.5', backgroundColor: 'lime'}, '20');
+
       }
     }
     //I want to check which one between moveUp or moveDown or moveLeft or moveRight is defined each interval.
@@ -73,16 +75,12 @@ $(() => {
 
       //Picks the right arrow image.
       if (moveUp !== undefined){
-        // console.log('YoUp!');
         $('#arrow').attr('src','images/arrows/arrow-icon-up.png');
       }else if(moveDown !== undefined){
-        // console.log('YoDown!');
         $('#arrow').attr('src','images/arrows/arrow-icon-down.png');
       }else if (moveLeft !== undefined){
-        // console.log('yoLeft!');
         $('#arrow').attr('src','images/arrows/arrow-icon-left.png');
       }else if (moveRight !== undefined){
-        // console.log('yoRight!');
         $('#arrow').attr('src','images/arrows/arrow-icon-right.png');
       }
 
@@ -107,13 +105,14 @@ $(() => {
         default: return; // exit this handler for other keys
       }
       setTimeout(()=>{
-        $('.dancer').attr('src','images/char/TumpsDance1.png');
+        $('.dancer').attr('src','images/char/Trump.gif');
       }, 500);
       e.preventDefault(); // prevent the default action (scroll / move caret)
+
+
     });
 
-    //triggers the moves' timer
-    movesTimer();
+    movesTimer(); //triggers the moves' timer
 
 
 
