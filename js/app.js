@@ -17,9 +17,13 @@ $(() => {
     $('h2').css('display','none');
     $('header').css({
       'paddingTop': '40px',
-      'height': '100px'
+      'height': '100px',
+      'backgroundColor': 'black'
     });
+    $('h1').css('color','white');
+    $('body').css('backgroundColor','black');
     $('#game-wrapper').css({ display: 'block'});
+    document.getElementById('audio').play();
 
     function movesTimer(){
       window.setInterval(nextMove, 1000);
@@ -85,7 +89,7 @@ $(() => {
       }
 
     } // nextMove closing
-    //collect values of the keys pressed by the user and store them into an array
+
     $(document).keydown(function(e) {
       userMove = e.which;
       scoreCheck();
@@ -105,7 +109,7 @@ $(() => {
         default: return; // exit this handler for other keys
       }
       setTimeout(()=>{
-        $('.dancer').attr('src','images/char/Trump.gif');
+        $('.dancer').attr('src','images/char/Mr-Trump.gif');
       }, 500);
       e.preventDefault(); // prevent the default action (scroll / move caret)
 
@@ -119,3 +123,7 @@ $(() => {
   });///end of click listener
 
 }); //doc ready closure
+
+
+
+//when if there is no match

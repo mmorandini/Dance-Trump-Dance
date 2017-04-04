@@ -1,5 +1,5 @@
 body {
-  background-color: dodgerblue;
+  background-color: black;
   margin: 0;
   text-align: center;
 }
@@ -9,11 +9,16 @@ header{
   margin: 0 auto;
   padding: 100px 0 20px;
   max-height: 250px;
-
 }
+.trumpy{
+  height: 500px;
+  display: block;
+  float: left;
+}
+
 header > h2 {
   font-family: 'Monofett', cursive;
-  color: tomato;
+  color: black;
   font-size: 65px;
   padding: 0;
   margin: 5px;
@@ -24,7 +29,7 @@ h1 {
   font-size: 90px;
   text-align: center;
   margin: 0 auto;
-  color: tomato;
+  color: black;
 }
 main {
   height: 400px;
@@ -39,19 +44,26 @@ main {
   font-family: 'Press Start 2P', cursive;
   font-size: 40px;
   border-radius: 20px;
-  /*opacity: 0.7;*/
-  color: white;
-  background-color: tomato;
+  display: inline-block;
+  color: grey;
+  background-color: white;
+
 }
 .instructions {
-  font-family: 'Monofett', cursive;
+  font-family: 'VT323', monospace;
   font-size: 40px;
   width: 60%;
   margin: 30px auto;
   color: white;
+  diplay: inline-block;
   }
 #game-wrapper{
+  text-align: center;
   display: none;
+  background-image: url('../images/other/shiny-ball.gif');
+  background-size: cover;
+  background-position: top;
+  bac
 }
 .scoreCounter{
   font-family: 'Press Start 2P', cursive;
