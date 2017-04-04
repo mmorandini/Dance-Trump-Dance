@@ -10,6 +10,7 @@ $(() => {
   let moveLeft;
   let scoreCounter = 0;
 
+
   $('#start-btn').on('click', function(){
     console.log('clicked');
     $(this).css('display','none');
@@ -18,10 +19,10 @@ $(() => {
     $('header').css({
       'paddingTop': '40px',
       'height': '100px',
-      'backgroundColor': 'black'
+      'backgroundColor': 'tomato'
     });
     $('h1').css('color','white');
-    $('body').css('backgroundColor','black');
+    $('body').css('backgroundColor','tomato');
     $('#game-wrapper').css({ display: 'block'});
     document.getElementById('audio').play();
 
@@ -80,12 +81,16 @@ $(() => {
       //Picks the right arrow image.
       if (moveUp !== undefined){
         $('#arrow').attr('src','images/arrows/arrow-icon-up.png');
+        // $('#game-wrapper').css('backgroundColor', 'blue');
       }else if(moveDown !== undefined){
         $('#arrow').attr('src','images/arrows/arrow-icon-down.png');
+        // $('#game-wrapper').css('backgroundColor', 'orange');
       }else if (moveLeft !== undefined){
         $('#arrow').attr('src','images/arrows/arrow-icon-left.png');
+        // $('#game-wrapper').css('backgroundColor', 'pink');
       }else if (moveRight !== undefined){
         $('#arrow').attr('src','images/arrows/arrow-icon-right.png');
+        // $('#game-wrapper').css('backgroundColor', 'lime');
       }
 
     } // nextMove closing
@@ -116,8 +121,18 @@ $(() => {
 
     });
 
-    movesTimer(); //triggers the moves' timer
+    function changeBackground(){
+      window.setInterval(pickColor,150);
+    }
 
+    function pickColor(){
+      var color = 'rgb(' + Math.floor(Math.random() * 255) + ',' + Math.floor(Math.random() * 255) + ',' + Math.floor(Math.random() * 255) + ')';
+      $('#game-wrapper').css('backgroundColor', color);
+    }
+
+    changeBackground();
+
+    movesTimer(); //triggers the moves' timer
 
 
   });///end of click listener
