@@ -66,7 +66,7 @@ main {
   background-color: white;
 }
 .scoreCounter{
-  color: white;
+  color: black;
   font-family: 'Press Start 2P', cursive;
   text-align: right;
   font-size: 20px;
@@ -80,15 +80,33 @@ main {
 footer {
   text-align: center;
   height: 50px;
+  padding: 20px;
   margin: 0 auto;
 }
+
 .game-footer{
   height: 200px;
-  margin: 50px;
+  width: 100%;
+  margin: 0px;
+  background-color: rgba(255,255,255,0.5);
+  position: relative;
 }
- #arrow {
+
+.game-footer img {
+  left: -150px;
+  position: absolute;
+  height: 100px;
+
+}
+
+ .arrow {
    height: 150px;
-   background-color: lime;
    border-radius: 90px;
-   opacity: 0.5;
+   opacity: 0.2;
+   position: relative;
+ }
+
+ .danceNow {
+   background-color: red;
+   
  }
