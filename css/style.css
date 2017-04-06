@@ -2,111 +2,125 @@ body {
   background-color: dodgerblue;
   margin: 0;
   text-align: center;
+  font-family: 'Press Start 2P', cursive;
+  color: white;
 }
+
+/********************** Header *****************/
+
 header{
   background-color: white;
   text-align: center;
   margin: 0 auto;
-  padding: 100px 0 20px;
-  max-height: 250px;
-}
-.trumpy{
-  height: 500px;
-  display: block;
-  float: left;
+  padding: 20px;
 }
 
-header > h2 {
-  font-family: 'Monofett', cursive;
-  color: dodgerblue;
-  font-size: 65px;
-  padding: 0;
-  margin: 5px;
-  font-weight: 100;
-}
-h1 {
+header h1 {
   font-family: 'Bungee Shade', cursive;
-  font-size: 90px;
   text-align: center;
   margin: 0 auto;
   color: tomato;
-}
-main {
-  height: 400px;
-  text-align: center;
-  padding: 15px;
-  margin: 0 auto;
+  font-size: 40px;
 }
 
-.start-button{
-  margin: 100px auto;
+.game {
+  background: tomato;
+}
+
+header h2 {
+  font-family: 'Monofett', cursive;
+  color: dodgerblue;
+  padding: 0;
+  margin: 5px;
+  font-weight: 100;
+  font-size: 40px;
+}
+
+/********************** Splash *****************/
+
+.instructions{
+  font-family: 'VT323', monospace;
+  font-size: 30px;
+  width: 60%;
+  margin: 30px auto;
+  color: tomato;
+}
+
+.start-button {
   padding: 15px;
   font-family: 'Press Start 2P', cursive;
-  font-size: 40px;
+  font-size: 20px;
   border-radius: 20px;
   display: inline-block;
   color: white;
   background-color: tomato;
+  border: none;
+}
 
-}
-.instructions{
-  font-family: 'VT323', monospace;
-  font-size: 40px;
-  width: 60%;
-  margin: 30px auto;
-  color: white;
-  diplay: inline-block;
-  }
-#game-wrapper{
-  text-align: center;
-  display: none;
-  /*background-image: url('../images/other/shiny-ball.gif');*/
-  background-size: cover;
-  background-position: top;
-  background-color: white;
-}
-.scoreCounter{
+/********************** Controls *****************/
+
+.scoreCounter {
   color: black;
   font-family: 'Press Start 2P', cursive;
   text-align: right;
-  font-size: 20px;
-}
-.dancer {
-  height: 400px;
-}
-#score{
-  font-size: 35px;
-}
-footer {
-  text-align: center;
-  height: 50px;
-  padding: 20px;
+  font-size: 16px;
+  max-width: 600px;
   margin: 0 auto;
 }
 
-.game-footer{
-  height: 200px;
+#score{
+  font-size: 20px;
+}
+
+/********************** Game *****************/
+
+main {
+  display: none;
+  text-align: center;
+  margin: 0 auto;
+}
+
+.dancer {
+  max-height: 300px;
+}
+
+.game-footer {
   width: 100%;
-  margin: 0px;
-  background-color: rgba(255,255,255,0.5);
+  margin: 20px 0;
+  background-color: white;
   position: relative;
+  height: 50px;
+  opacity: 0.7;
 }
 
 .game-footer img {
   left: -150px;
   position: absolute;
-  height: 100px;
-
+  height: 50px;
 }
 
- .arrow {
-   height: 150px;
-   border-radius: 90px;
-   opacity: 0.2;
-   position: relative;
- }
+.arrow {
+  height: 150px;
+  border-radius: 90px;
+  /*opacity: 0.2;*/
+  position: relative;
+}
 
- .danceNow {
-   background-color: red;
-   
- }
+.danceNow {
+  background-color: yellow;
+}
+
+.hit {
+  background-color: lime;
+}
+
+.fail {
+  background-color: red;
+}
+
+/********************** Footer *****************/
+
+footer {
+  text-align: center;
+  margin: 20px auto 0;
+}

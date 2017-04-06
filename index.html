@@ -22,35 +22,24 @@
   <header>
     <h1>DANCE, TRUMP, DANCE!</h1>
     <h2>Test your dancing skills!</h2>
+    <section>
+      <div class="first">
+        <p class="instructions">Use &#8592; &#8593; &#8594; &#8595; to make Trump dance. Each match will make you earn 100pts, every miss will take 100pts off your final score.  </p>
+        <button class="start-button" id="start-btn" >START!</button>
+      </div>
+    </section>
   </header>
-
-  <section>
-    <div class="first">
-      <p class="instructions">Use &#8592 &#8593 &#8594 &#8595 to make Trump dance. Each match will make you earn 100pts, every miss will take 100pts off your final score.  </p>
-      <button class="start-button" id="start-btn" >START!</button>
+  <main id="game-wrapper">
+    <div class="scoreCounter" id="">
+      POINTS:<span id="score">0</span>
     </div>
-
-    <div id="game-wrapper">
-      <main>
-        <div class="scoreCounter" id="">
-          CURRENT POINTS:<span id="score"> 0</span>
-        </div>
-        <div class="dancefloor">
-          <img class="dancer" src="images/char/TumpsDance1.png">
-          <audio src="audio/Earth Wind and Fire - Boogie wonderland.mp3" type="audio/mpeg" id="audio">
-          </audio>
-        </div>
-
-      </main>
-
-      <footer class="game-footer">
-
-      </footer>
+    <div class="dancefloor">
+      <img class="dancer" src="images/char/TumpsDance1.png">
+      <audio src="audio/Earth Wind and Fire - Boogie wonderland.mp3" type="audio/mpeg" id="audio">
+      </audio>
     </div>
-  </section>
-
-
-  <footer>
-  </footer>
+    <div class="game-footer"></div>
+  </main>
+  <footer>&copy; Matteo</footer>
 </body>
 </html>
