@@ -2,7 +2,7 @@ var Game = Game || {};
 
 let userMove      = 0;
 let expectedMove  = 0;
-let scoreCounter  = 0;
+// let scoreCounter  = 0;
 const arrows      = [];
 
 let $body;
@@ -15,6 +15,9 @@ let $header;
 let $wrapper;
 let $score;
 let $activeArrow;
+let timeLeft = 60;
+let actionInterval;
+let timerInterval;
 
 const upSrc       = 'images/arrows/arrow-icon-up.png';
 const downSrc     = 'images/arrows/arrow-icon-down.png';
@@ -33,11 +36,15 @@ function init() {
   $header     = $('header');
   $wrapper    = $('#game-wrapper');
   $score      = $('#score');
-
   $start.on('click', start);
 }
 
+
+
 function start(){
+  clearInterval(timerInterval);
+  clearInterval(actionInterval);
+
   $(this).css('display','none');
   $landing.css('display','none');
   $h2.css('display','none');
@@ -45,7 +52,28 @@ function start(){
   $h1.css('color','white');
   $body.css('backgroundColor','tomato');
   $wrapper.css({ display: 'block'});
+  $gameFooter.css('display','block');
+  $('#gameOver').css('display', 'none');
 
+  $('.arrow').remove();
+  timeLeft = 60;
+
+  timerInterval = setInterval(timer, 1000);
+
+  function timer(){
+    if (timeLeft === 0 || timeLeft < 0){
+      timeLeft = 0;
+      $gameFooter.css('display','none');
+      $('#gameOver').css('display', 'block');
+      clearInterval(actionInterval);
+      clearInterval(timerInterval);
+      $('#reset-btn').on('click',start);
+      return;
+    }else{
+      timeLeft -= 1;
+      $('#score').text(timeLeft);
+    }
+  }
 
   document.getElementById('audio').play();
 
@@ -53,7 +81,6 @@ function start(){
 
   movesTimer();
 
-  changeBackground();
 }
 
 function userMoves(e) {
@@ -72,33 +99,39 @@ function userMoves(e) {
     case 40: // down
       $('.dancer').attr('src','images/char/TumpsDance14.png');
       break;
+    case 32: // space
+      $('.dancer').attr('src','images/char/Punte.png');
+      break;
     default: return; // exit this handler for other keys
   }
   setTimeout(()=>{
     $('.dancer').attr('src','images/char/TumpsDance1.png');
   }, 500);
-
+  pickColor();
   scoreCheck(userMove);
 
   e.preventDefault(); // prevent the default action (scroll / move caret)
 }
 
 function movesTimer(){
-  window.setInterval(nextMove, 750);
+  actionInterval = setInterval(nextMove, 600);
 }
 
 function nextMove(){
   // generates a random number for the computer to choose the next required move;
   const random = Math.random();
-  if (random < 0.25 ){
+  if (random < 0.225 ){
     createArrow('up');
-  } else if (random > 0.25 && random < 0.5){
+  } else if (random > 0.225 && random < 0.45){
     createArrow('down');
-  } else if (random > 0.5 && random < 0.75){
+  } else if (random > 0.45 && random < 0.675){
     createArrow('right');
-  } else{
+  } else if (random > 0.675 && random < 0.9){
     createArrow('left');
+  } else {
+    createArrow('space');
   }
+
 }
 
 function createArrow(direction){
@@ -121,6 +154,10 @@ function createArrow(direction){
       $img.attr('src',rightSrc);
       $img.attr('data', '39');
       break;
+    case 'space':
+      $img.attr('src', 'images/arrows/dickpic.png' );
+      $img.attr('data', '32');
+      break;
     default: return;
   }
 
@@ -131,6 +168,7 @@ function createArrow(direction){
     left: `${$gameFooter.width() + $img.width()}px`
   }, {
     duration: 15000,
+    easing: 'linear',
     step: activateButtons,
     complete: removeAnimations
   });
@@ -156,23 +194,24 @@ function scoreCheck(userMove){
   expectedMove = (parseFloat($activeArrow.attr('data')));
 
   if (expectedMove === userMove){
-    scoreCounter += 100;
-    $score.html(scoreCounter);
+    timeLeft += 3;
+    $score.html(timeLeft);
     $activeArrow.addClass('hit');
-  } else {
-    scoreCounter -= 100;
-    $score.html(scoreCounter);
+  } else if (expectedMove !== userMove || userMove === 0){
+    timeLeft -= 10;
+    $score.html(timeLeft);
     $activeArrow.addClass('fail');
   }
 }
-function changeBackground(){
-  window.setInterval(pickColor,150);
-}
+
+
+
+
+// function changeBackground(){
+//   window.setInterval(pickColor,250);
+// }
 
 function pickColor(){
-  // const color = 'rgb(' + Math.floor(Math.random() * 255) + ','
-  //   + Math.floor(Math.random() * 255) + ','
-  //   + Math.floor(Math.random() * 255) + ')';
   const colors    = ['red', 'green', 'blue', 'yellow', 'white', 'cyan', 'orange', 'purple', 'brown', 'pink', 'lime', 'teal'];
   let randomColor = colors[Math.floor(Math.random() * colors.length)];
   while ($wrapper.css('backgroundColor') === randomColor) {

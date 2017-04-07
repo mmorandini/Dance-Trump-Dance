@@ -22,24 +22,32 @@
   <header>
     <h1>DANCE, TRUMP, DANCE!</h1>
     <h2>Test your dancing skills!</h2>
+    <img src="images/char/Palo.png" alt="" class="header-img first">
     <section>
       <div class="first">
-        <p class="instructions">Use &#8592; &#8593; &#8594; &#8595; to make Trump dance. Each match will make you earn 100pts, every miss will take 100pts off your final score.  </p>
+        <p class="instructions">Use &#8592; &#8593; &#8594; &#8595; to make Trump dance, or space to catch the penises. Each match will make you earn 5 seconds, every miss will take 10 seconds off your time. </p>
         <button class="start-button" id="start-btn" >START!</button>
       </div>
     </section>
   </header>
   <main id="game-wrapper">
     <div class="scoreCounter" id="">
-      POINTS:<span id="score">0</span>
+      Time left:<span id="score">0</span>
     </div>
     <div class="dancefloor">
       <img class="dancer" src="images/char/TumpsDance1.png">
       <audio src="audio/Earth Wind and Fire - Boogie wonderland.mp3" type="audio/mpeg" id="audio">
       </audio>
     </div>
-    <div class="game-footer"></div>
+    <div class="game-footer">
+      <div class="dance">
+      </div>
+    </div>
+    <div id="gameOver">
+      <h1>GAME OVER</h1>
+      <button  class="start-button" id="reset-btn">Play Again!</button>
+    </div>
   </main>
-  <footer>&copy; Matteo</footer>
+  <footer>&copy; MMorandini & Friends</footer>
 </body>
 </html>

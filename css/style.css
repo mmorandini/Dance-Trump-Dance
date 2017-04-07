@@ -3,7 +3,7 @@ body {
   margin: 0;
   text-align: center;
   font-family: 'Press Start 2P', cursive;
-  color: white;
+  color: tomato;
 }
 
 /********************** Header *****************/
@@ -24,7 +24,7 @@ header h1 {
 }
 
 .game {
-  background: tomato;
+  background:tomato;
 }
 
 header h2 {
@@ -35,6 +35,9 @@ header h2 {
   font-weight: 100;
   font-size: 40px;
 }
+.header-img {
+  height: 350px;
+}
 
 /********************** Splash *****************/
 
@@ -43,7 +46,7 @@ header h2 {
   font-size: 30px;
   width: 60%;
   margin: 30px auto;
-  color: tomato;
+  color: dodgerblue;
 }
 
 .start-button {
@@ -55,6 +58,7 @@ header h2 {
   color: white;
   background-color: tomato;
   border: none;
+  margin-bottom: 20px;
 }
 
 /********************** Controls *****************/
@@ -90,7 +94,7 @@ main {
   background-color: white;
   position: relative;
   height: 50px;
-  opacity: 0.7;
+  opacity: 0.9;
 }
 
 .game-footer img {
@@ -109,13 +113,21 @@ main {
 .danceNow {
   background-color: yellow;
 }
+.dance{
+  background-color: white;
+  border: 5px solid grey;
+  width: 80px;
+  height: 40px;
+  display: inline-block;
+  border-radius: 90px;
 
+}
 .hit {
   background-color: lime;
 }
 
 .fail {
-  background-color: red;
+  background-color: tomato;
 }
 
 /********************** Footer *****************/
