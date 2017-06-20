@@ -15,7 +15,7 @@ let $header;
 let $wrapper;
 let $score;
 let $activeArrow;
-let timeLeft = 60;
+let timeLeft = 30;
 let actionInterval;
 let timerInterval;
 
@@ -68,6 +68,7 @@ function start(){
     while(timeLeft > 0);
 
     if (timeLeft <= 0 ){
+      timeLeft=0;
       $gameFooter.css('display','none');
       $('#gameOver').css('display', 'block');
       clearInterval(actionInterval);
@@ -206,24 +207,24 @@ function scoreCheck(userMove){
   if ($activeArrow === undefined) return;
 
   expectedMove = (parseFloat($activeArrow.attr('data')));
-
-  if (expectedMove === userMove){
+  if (timeLeft < 0){
+    if (expectedMove === userMove){
     timeLeft += 3;
     $score.html(timeLeft);
     $activeArrow.addClass('hit');
-  } else if (expectedMove !== userMove || userMove === 0){
+    } else if (expectedMove !== userMove || userMove === 0){
     timeLeft -= 10;
     $score.html(timeLeft);
     $activeArrow.addClass('fail');
-  }
+    }
+  } else return;
+  
 }
 
 
 
 
-// function changeBackground(){
-//   window.setInterval(pickColor,250);
-// }
+
 
 function pickColor(){
   const colors    = ['red', 'green', 'blue', 'yellow', 'white', 'cyan', 'orange', 'purple', 'brown', 'pink', 'lime', 'teal'];
