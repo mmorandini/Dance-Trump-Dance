@@ -1,4 +1,4 @@
- <img src="https://raw.githubusercontent.com/mmorandini/wdi-project-1/master/images/other/Palo.png" height="300">
+ <img src="https://raw.githubusercontent.com/mmorandini/wdi-project-1/master/images/other/DTD-background.png" width="150%">
  <h1>Dance Trump Dance!</h1>
 <h5>Matteo Morandini<br>
 <small>My first project for the WDI course at General Assembly London</small></h5>
