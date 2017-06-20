@@ -44,7 +44,6 @@ function init() {
 function start(){
   clearInterval(timerInterval);
   clearInterval(actionInterval);
-  console.log(this);
   $(this).css('display','none');
   $landing.css('display','none');
   $h2.css('display','none');
@@ -61,33 +60,16 @@ function start(){
   timerInterval = setInterval(timer, 1000);
 
   function timer(){
-    do {
+    if (timeLeft > 0){
       timeLeft -= 1;
       $('#score').text(timeLeft);
+    } else {
+    $gameFooter.css('display','none');
+    $('#gameOver').css('display', 'block');
+    clearInterval(actionInterval);
+    clearInterval(timerInterval);
+    $('#reset-btn').on('click', start);
     }
-    while(timeLeft > 0);
-
-    if (timeLeft <= 0 ){
-      timeLeft=0;
-      $gameFooter.css('display','none');
-      $('#gameOver').css('display', 'block');
-      clearInterval(actionInterval);
-      clearInterval(timerInterval);
-      $('#reset-btn').on('click',start);
-      return;
-    }
-    // if (timeLeft === 0 || timeLeft < 0){
-    //   timeLeft = 0;
-    //   $gameFooter.css('display','none');
-    //   $('#gameOver').css('display', 'block');
-    //   clearInterval(actionInterval);
-    //   clearInterval(timerInterval);
-    //   $('#reset-btn').on('click',start);
-    //   return;
-    // }else{
-    //   timeLeft -= 1;
-    //   $('#score').text(timeLeft);
-    // }
   }
 
   document.getElementById('audio').play();
@@ -207,15 +189,23 @@ function scoreCheck(userMove){
   if ($activeArrow === undefined) return;
 
   expectedMove = (parseFloat($activeArrow.attr('data')));
+  
   if (timeLeft > 0){
     if (expectedMove === userMove){
     timeLeft += 3;
     $score.html(timeLeft);
     $activeArrow.addClass('hit');
     } else if (expectedMove !== userMove || userMove === 0){
-    timeLeft -= 10;
-    $score.html(timeLeft);
-    $activeArrow.addClass('fail');
+      if (timeLeft >= 10){
+        timeLeft -= 10;
+        $score.html(timeLeft);
+        $activeArrow.addClass('fail');
+      } else {
+        timeLeft -= timeLeft;
+        $score.html(timeLeft);
+        $activeArrow.addClass('fail');
+      }
+    
     }
   } else return;
   
