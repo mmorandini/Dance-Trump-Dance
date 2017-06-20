@@ -61,18 +61,32 @@ function start(){
   timerInterval = setInterval(timer, 1000);
 
   function timer(){
-    if (timeLeft === 0 || timeLeft < 0){
-      timeLeft = 0;
+    do {
+      timeLeft -= 1;
+      $('#score').text(timeLeft);
+    }
+    while(timeLeft > 0);
+
+    if (timeLeft <= 0 ){
       $gameFooter.css('display','none');
       $('#gameOver').css('display', 'block');
       clearInterval(actionInterval);
       clearInterval(timerInterval);
       $('#reset-btn').on('click',start);
       return;
-    }else{
-      timeLeft -= 1;
-      $('#score').text(timeLeft);
     }
+    // if (timeLeft === 0 || timeLeft < 0){
+    //   timeLeft = 0;
+    //   $gameFooter.css('display','none');
+    //   $('#gameOver').css('display', 'block');
+    //   clearInterval(actionInterval);
+    //   clearInterval(timerInterval);
+    //   $('#reset-btn').on('click',start);
+    //   return;
+    // }else{
+    //   timeLeft -= 1;
+    //   $('#score').text(timeLeft);
+    // }
   }
 
   document.getElementById('audio').play();
