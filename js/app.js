@@ -207,7 +207,7 @@ function scoreCheck(userMove){
   if ($activeArrow === undefined) return;
 
   expectedMove = (parseFloat($activeArrow.attr('data')));
-  if (timeLeft < 0){
+  if (timeLeft > 0){
     if (expectedMove === userMove){
     timeLeft += 3;
     $score.html(timeLeft);
