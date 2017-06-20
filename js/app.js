@@ -56,7 +56,7 @@ function start(){
   $('#gameOver').css('display', 'none');
 
   $('.arrow').remove();
-  timeLeft = 60;
+  timeLeft = 30;
 
   timerInterval = setInterval(timer, 1000);
 
