@@ -44,7 +44,7 @@ function init() {
 function start(){
   clearInterval(timerInterval);
   clearInterval(actionInterval);
-
+  console.log(this);
   $(this).css('display','none');
   $landing.css('display','none');
   $h2.css('display','none');
