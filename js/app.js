@@ -189,7 +189,7 @@ function scoreCheck(userMove){
   if ($activeArrow === undefined) return;
 
   expectedMove = (parseFloat($activeArrow.attr('data')));
-  
+
   if (timeLeft > 0){
     if (expectedMove === userMove){
     timeLeft += 3;
@@ -210,10 +210,6 @@ function scoreCheck(userMove){
   } else return;
   
 }
-
-
-
-
 
 
 function pickColor(){
